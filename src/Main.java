@@ -15,6 +15,7 @@ public class Main {
 
             String decoded = AESEncrypter.decrypt(code);
             System.out.println(decoded);
+
         } catch (java.lang.Exception ex) {
             System.out.println(ex.toString());
         }

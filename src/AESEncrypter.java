@@ -15,8 +15,6 @@ public class AESEncrypter {
         Cipher c = Cipher.getInstance(ALGO);
         c.init(Cipher.ENCRYPT_MODE, key);
         byte[] encVal = c.doFinal(Data.getBytes());
-       // Base64 base64 = new Base64.getEncoder();
-
         String encryptedValue = Base64.getEncoder().encodeToString(encVal);
         return encryptedValue;
     }
@@ -26,10 +24,7 @@ public class AESEncrypter {
         Cipher c = Cipher.getInstance(ALGO);
         c.init(Cipher.DECRYPT_MODE, key);
         byte[] decodedValue = Base64.getDecoder().decode(encryptedData);
-       // byte[] decordedValue = new BASE64Decoder().decodeBuffer(encryptedData);
-
         byte[] decValue = c.doFinal(decodedValue);
-        // byte[] decValue = c.doFinal(decordedValue);
         String decryptedValue = new String(decValue);
         return decryptedValue;
     }
